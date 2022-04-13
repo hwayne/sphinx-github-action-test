@@ -25,12 +25,12 @@ jobs:
       - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Trick sphinx-action into reading our requirements.txt
+        run: cp requirements.txt docs/
       - uses: ammaraskar/sphinx-action@master
         with:
+          docs-folder: "docs"
           build-command: "sphinx-build . _build/html/"
-          docs-folder: "docs/"
       - uses: actions/upload-artifact@v1
         with:
           name: DocumentationHTML
