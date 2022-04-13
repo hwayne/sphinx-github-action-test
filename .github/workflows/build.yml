@@ -26,7 +26,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, world!
+        run: ls docs/
       - uses: ammaraskar/sphinx-action@master
         with:
           # We can't use the docs-folder param because then requirements.txt needs to be inside the docs folder
