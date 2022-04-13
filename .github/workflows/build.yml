@@ -35,5 +35,3 @@ jobs:
         with:
           name: DocumentationHTML
           path: docs/_build/html/
-          echo Add other actions to build,
-          echo test, and deploy your project.
