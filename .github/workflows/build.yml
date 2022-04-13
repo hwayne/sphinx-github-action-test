@@ -29,8 +29,9 @@ jobs:
         run: echo Hello, world!
       - uses: ammaraskar/sphinx-action@master
         with:
-          build-command: "sphinx-build . _build/html/"
-          docs-folder: "docs/"
+          # We can't use the docs-folder param because then requirements.txt needs to be inside the docs folder
+          # So instead we inline it into build-command
+          build-command: "sphinx-build docs/. docs/_build/html/"
       - uses: actions/upload-artifact@v1
         with:
           name: DocumentationHTML
